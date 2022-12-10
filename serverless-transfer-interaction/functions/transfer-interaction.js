@@ -28,18 +28,12 @@ exports.handler = async function (context, event, callback) {
    */
   newAttributes.ignoreAgent = workerName
 
-  /*
-   * update task attributes to include the required targetSid on the task
-   * this could either be a workerSid or a queueSid
-   */
-  newAttributes.targetSid = targetSid
-
   // add an attribute that will tell our Workflow if we're transferring to a worker or a queue
   const isWorkerTransfer = targetSid.startsWith('WK')
   if (isWorkerTransfer) {
-    newAttributes.transferTargetType = 'worker'
+    newAttributes.targetWorkerSid = targetSid
   } else {
-    newAttributes.transferTargetType = 'queue'
+    newAttributes.targetQueueSid = targetSid
   }
 
   try {

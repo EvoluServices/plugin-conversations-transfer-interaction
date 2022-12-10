@@ -37,7 +37,7 @@ const closeParticipantAndtransfer = async (payload, original) => {
     interactionSid: agent.interactionSid,
     channelSid: agent.channelSid,
     participantSid: agent.participantSid,
-    workflowSid: payload.task.workflowSid,
+    workflowSid: process.env.FLEX_APP_TRANSFER_WORKFLOW_SID,
     taskChannelUniqueName: payload.task.taskChannelUniqueName,
     taskAttributes: payload.task.attributes,
     targetSid: payload.targetSid,

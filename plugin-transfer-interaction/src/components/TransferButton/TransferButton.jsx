@@ -17,33 +17,12 @@ export const TransferButton = () => {
     Actions.addListener('beforeTransferTask', () => setIsLoading(true))
   }, [])
 
-  // TODO: hide the call icon from the directory
-
-  // const targetElement = document.getElementsByClassName(
-  //   'Twilio-WorkerDirectory-ButtonContainer'
-  // )
-  // if (targetElement) {
-  //   targetElement.forEach(icon => (icon.firstChild.style.display = 'none'))
-  // }
-
-  // const queue = document.getElementsByClassName('Twilio-WorkerDirectory-Queue')
-  // const queueContent = document.getElementsByClassName(
-  //   'Twilio-WorkerDirectory-QueueContent'
-  // )
-
-  // if (queue.length > 0) {
-  //   const queueArr = Array.from(queue)
-
-  //   queueArr.forEach(() => {
-  //     const queueContentArr = Array.from(queueContent)
-
-  //     queueContentArr.forEach(queueContent => {
-  //       if (queueContent.innerText === 'Test Queue') {
-  //         queueContent.parentNode.remove()
-  //       }
-  //     })
-  //   })
-  // }
+  const targetElement = document.getElementsByClassName(
+    'Twilio-WorkerDirectory-ButtonContainer'
+  )
+  if (targetElement) {
+    targetElement.forEach(icon => (icon.firstChild.style.display = 'none'))
+  }
 
   return (
     <>
